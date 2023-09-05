@@ -9,6 +9,8 @@ from prophet.plot import plot_plotly
 
 DEFAULT_DAYS = 90
 
+st.set_page_config(page_title='Augur forecasting', page_icon=None, layout="centered",
+                   initial_sidebar_state="auto", menu_items=None)
 st.title('Augur - Forecasting for mailbox.org')
 
 st.header('About')
