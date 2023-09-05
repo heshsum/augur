@@ -48,8 +48,6 @@ def predict(df):
 
 uploaded_file = st.file_uploader('Select CSV file')
 period = st.number_input('Prediction period (days)', step=1, value=DEFAULT_DAYS)
-# period = st.date_input(label='Enter prediction target',
-#   value=datetime.date.today(), format='DD.MM.YYYY')
 
 start_button = st.button('Start', type='primary')
 
