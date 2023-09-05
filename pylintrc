@@ -1,0 +1,6 @@
+# pylintrc
+[MESSAGES CONTROL]
+disable=
+  trailing-whitespace,
+  invalid-name,
+  redefined-outer-name,
