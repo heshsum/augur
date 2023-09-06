@@ -13,10 +13,10 @@ st.set_page_config(page_title='Augur forecasting', page_icon=None, layout="cente
                    initial_sidebar_state="auto", menu_items=None)
 st.title('Augur - Forecasting for mailbox.org')
 
-st.header('About')
-st.markdown('This tool uses Facebook Prophet to predict growth based on the historic flight path.')
+st.subheader('About')
+st.markdown('This tool estimates future growth based on the historic flight path.')
 
-st.header('Usage')
+st.subheader('Usage')
 st.markdown('''Upload a CSV file containing two columns:  
 1. ds for datestamp (yyyy-mm-dd, e.g. 2023-12-31)
 2. y for value (e.g. 42)''')
