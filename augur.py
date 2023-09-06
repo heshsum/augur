@@ -32,10 +32,10 @@ def predict(df):
         model.fit(df)
         forecast = model.predict(model.make_future_dataframe(periods=period))
 
-    st.write('Calculated predictions:')
-    with st.expander('Show raw data'):
+    with tab1:
+        st.write(plot_plotly(model, forecast))
+    with tab2:
         forecast_data = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
-        st.table(forecast_data.sort_values(by='ds', ascending=False))
         csv = forecast_data.to_csv().encode('utf-8')
         st.download_button(
             label='Download as CSV',
@@ -43,13 +43,15 @@ def predict(df):
             file_name='augur.csv',
             mime='text/csv',
         )
-    st.write(plot_plotly(model, forecast))
+        st.table(forecast_data.sort_values(by='ds', ascending=False))
 
 
 uploaded_file = st.file_uploader('Select CSV file')
 period = st.number_input('Prediction period (days)', step=1, value=DEFAULT_DAYS)
 
 start_button = st.button('Start', type='primary')
+
+tab1, tab2 = st.tabs(["Chart", "Raw data"])
 
 if start_button:
     if uploaded_file is not None:
