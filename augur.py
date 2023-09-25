@@ -68,6 +68,7 @@ if start_button:
         df = pd.read_csv(uploaded_file)
         predict(df)
     else:
+        # If there's no file, show a warning message for three seconds
         warning = st.warning('Please upload a file', icon='⚠️')
         time.sleep(3)
         warning.empty()
