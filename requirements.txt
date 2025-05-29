@@ -1,6 +1,6 @@
-wheel~=0.41.0
-streamlit~=1.26.0
-pandas~=2.0.2
-numpy~=1.24.2
-prophet~=1.1.4
-plotly~=5.15.0
+wheel
+streamlit
+pandas
+numpy
+prophet
+plotly
